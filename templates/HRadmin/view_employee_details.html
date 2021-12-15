@@ -1,0 +1,33 @@
+<html>
+    <h1 style="color: aqua;text-align: center">View Employee Details</h1>
+</html>
+<table align="center" border="2">
+
+  <tr>
+               <th>EMPLOYEE ID</th>
+               <th>EMPLOYEE NAME</th>
+               <th> DESIGNATION</th>
+               <th> CONTACTNO</th>
+               <th>ADDRESS</th>
+               <th> EMAIL</th>
+  </tr>
+
+    {% for x in data %}
+        <tr>
+            <th>{{ x.id }}</th>
+            <th>{{ x.EMPLOYEENAME}}</th>
+            <th>{{ x.DESIGNATION}}</th>
+            <th>{{ x.CONTACTNO}}</th>
+            <th>{{ x.ADDRESS}}</th>
+            <th>{{ x.EMAIL}}</th>
+
+        </tr>
+
+    {% endfor %}
+
+</table>
+<h1 style="text-align: center">
+             <a href="{% url 'admin_home_page' %}">Back</a>
+        </h1>
+
+

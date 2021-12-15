@@ -1,0 +1,42 @@
+<html>
+     <body>
+         <table align="center" border="2">
+             <tr><th colspan="8"><h3 style="text-align: center;color: red"> SHORTLISED LIST</h3></th></tr>
+             <tr>
+                 <th>APPLICANT_ID</th>
+                 <th>APPLICANT_NAME</th>
+                 <th>QUALIFICATION</th>
+                 <th>DATE_OF_BIRTH</th>
+                 <th>PERCENTAGE</th>
+                 <th>MAIL_ID</th>
+                 <th>CONTACT</th>
+                 <th>STATUS</th>
+             </tr>
+             {% for x in data %}
+                 <tr>
+                     <th>{{ x.ID }}</th>
+                     <th>{{ x.NAME }}</th>
+                     <th>{{ x.QUALIFICATION }}</th>
+                     <th>{{ x.DATE_OF_BIRTH }}</th>
+                     <th>{{ x.PERCENTAGE }}</th>
+                     <th>{{ x.EMAIL }}</th>
+                     <th>{{ x.MOBILE }}</th>
+                     <th>select</th>
+                 </tr>
+
+             {% endfor %}
+         </table>
+
+     </body>
+</html>
+<table align="center">
+    <form action="{% url 'hr_home_page' %}" method="post">
+        {%  csrf_token %}
+        <tr>
+            <th>
+                        <button type="submit">Back</button>
+
+            </th>
+        </tr>
+    </form>
+</table>

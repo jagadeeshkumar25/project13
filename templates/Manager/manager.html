@@ -1,0 +1,22 @@
+  <table align="center" border="0">
+            <tr>
+                <th>
+                    <h1>Manager Login Page</h1>
+                </th>
+            </tr>
+            <tr>
+                <form action="{%  url 'manager_home_page' %}" method="post">
+         {% csrf_token %}
+
+    <tr>
+             <th style="text-align: center;color: blue">
+                     {{ ml.as_p }}
+             </th>
+         </tr>
+                  <tr><th><button type="submit">Login</button></th></tr>
+           </form>
+        </table>
+
+  <h1 style="text-align: center">
+             <a href="{% url 'index' %}">Back</a>
+        </h1>

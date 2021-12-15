@@ -1,0 +1,26 @@
+<html>
+<h1 style="color: chocolate;text-align: center">Admin Login Page</h1>
+<table align="center" border="0">
+                <form action="{% url 'admin_login_page' %}" method="post">
+                 {% csrf_token %}
+                    <tr><th>USERNAME :<input type="text" placeholder="USERNAME" required name="u1"></th></tr>
+                    <tr><th> PASSWORD :<input type="password" placeholder="PASSWORD" required name="p1"></th></tr>
+                    <tr><th><button type="submit" >Login</button></th></tr>
+
+                    <tr>
+                        <th>
+                            {%  for x in messages %}
+                                <h3 style="color: red">{{ x   }}</h3>
+                            {% endfor %}
+                        </th>
+                    </tr>
+                 <tr>
+            <th>
+                <a href="{% url 'index' %}">Back</a>
+            </th>
+        </tr>
+                 </form>
+
+
+</table>
+</html>

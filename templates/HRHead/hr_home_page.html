@@ -1,0 +1,22 @@
+<html>
+     <body>
+          <table align="center" border="0">
+               <tr><th style="text-align: center;color: red">
+                   HR HEAD HOME PAGE
+               </th></tr>
+              <tr><th style="text-align: center;color: blue">
+                  <a href="{% url 'view_shortlised' %}"> VIEW SHORTLISTED APPLICANTS</a>
+              </th> </tr>
+               <tr><th style="text-align: center;color: green">
+                   <a href="{%  url 'selected_applicant' %}"> VIEW SELECTED APPLICANTS</a>
+              </th> </tr>
+               <tr><th style="text-align: center;color: yellow">
+                   <a href="{%  url 'rejected_applicant' %}">VIEW REJECTED APPLICANTS</a>
+              </th> </tr>
+              <tr><th><button type="submit"><a href="{%  url 'hr_login_page' %}"> LOGOUT</a></button> </th></tr>
+          </table>
+     <h1 style="text-align: center">
+             <a href="{% url 'hr_login_page' %}">Back</a>
+        </h1>
+     </body>
+</html>

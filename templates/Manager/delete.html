@@ -1,0 +1,49 @@
+   <table align="center" border="2">
+
+  <tr>         <th>ID</th>
+               <th>OPPERTUNITY CODE</th>
+               <th>QULALIFICATION</th>
+               <th> REGISTRATION START FROM</th>
+               <th> AGE LIMIT</th>
+               <th>LAST DATE TO APPLY</th>
+               <th> DEPARTMENT ID</th>
+               <th> NO OF POSTION</th>
+               <th> DESCRIPTION</th>
+               <th> RESPONSIBILITIES</th>
+               <th> CONTACT NO</th>
+  </tr>
+<form action="{%  url 'delete_details' %}" method="post">
+                       {% csrf_token %}
+
+    {% for x in data %}
+        <tr>
+
+           <li> <th><input type="checkbox" name="c1" value="{{ x.OPPERTUNITY_CODE}}"></th></li>
+            <th>{{ x.OPPERTUNITY_CODE }}</th>
+            <th>{{ x.QUALIFICATION}}</th>
+            <th>{{ x.RESISTARTION_START_FORM}}</th>
+            <th>{{ x.AGE_LIMIT}}</th>
+            <th>{{ x.LAST_DAY_TO_APPLY}}</th>
+            <th>{{ x.DEPARTMENT_ID}}</th>
+            <th>{{ x.NO_OF_POSITION}}</th>
+            <th>{{ x.DESCRIPTION}}</th>
+            <th>{{ x.RESPONSIBILITIES}}</th>
+            <th>{{ x.CONTACTNO}}</th>
+
+
+
+        </tr>
+    {% endfor %}
+
+                        <tr><th colspan="11"><button type="submit">DELETE</button> </th></tr>
+                   </form>
+
+
+
+</table>
+
+<h1 style="text-align: center">
+             <a href="{% url 'recuirtment_page' %}">Back</a>
+        </h1>
+
+

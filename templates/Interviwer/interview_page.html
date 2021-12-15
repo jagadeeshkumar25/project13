@@ -1,0 +1,45 @@
+<html>
+      <body>
+      <form action="{% url 'saved_interview_applicant' %}" method="post">
+      {% csrf_token %}
+            <table align="center" border="0">
+                <tr>
+                   <th>
+                        {% if   message %}
+                             <h1 style="text-align: center;color: darkred">{{ message }}</h1>
+                        {% endif %}
+                   </th>
+                </tr>
+            <tr><th><h4 style="text-align: center;color: darkgreen">
+                ASSIGN AN INTERVIEW FOR AN APPLICANT
+            </h4> </th></tr>
+            <tr><th>Interview ID :
+                <input type="number" value="{{ data1.Interview_ID }}" name="i1">
+            </th></tr>
+                <tr><th>Interviewer :<input type="number" value="{{ data1.Interviewer }}" name="i2" ></th></tr>
+                <tr><th> SCHEDULE_TIMESTAMP<input type="date" value="{{ data1.SCHEDULE_TIMESTAMP }}" name="i3"></th></tr>
+{#             <tr>#}
+{#                <th>#}
+{#                    {% if   message %}#}
+{#                      <h1 style="text-align: center;color: darkred">{{ message }}</h1>#}
+{#                    {% endif %}#}
+{#                </th>#}
+{#            </tr>#}
+                <tr>
+                    <th>
+                        ApplicantID   :<input type="text" name="i4" value="{{ data.ID }}"></th></tr>
+
+                <tr><th>RESULT:
+                    <select name="i5">
+                        <option>SELECTED</option>
+                        <option>REJECTED</option>
+                    </select>
+                </th></tr>
+                <tr><th><button type="submit">ADD TO INTERVIEW SCHEDULE</button> </th></tr>
+            </table>
+      </form>
+      <h1 style="text-align: center">
+             <a href="{% url 'interviewer_login_page' %}">Back</a>
+        </h1>
+      </body>
+</html>

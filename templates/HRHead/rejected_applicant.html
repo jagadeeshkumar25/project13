@@ -1,0 +1,39 @@
+<html>
+     <body>
+         <table align="center" border="2">
+             <tr><th colspan="8"><h3 style="text-align: center;color: red"> ONLY REJECTED LIST</h3></th></tr>
+             <tr>
+                 <th>INTERVIEWER_ID</th>
+                 <th>INTERVIEWER</th>
+                 <th>APPLICANT_ID</th>
+                 <th>SCHEDULE_TIMESTAMP</th>
+                 <th>RESULT </th>
+             </tr>
+             {% for x in data %}
+                 {% if x.Result == "REJECTED" %}
+                 <tr>
+                     <th>{{ x.Interview_ID }}</th>
+                     <th>{{ x.Interviewer }}</th>
+                     <th>{{ x.Applicant_id }}</th>
+                     <th>{{ x.SCHEDULE_TIMESTAMP }}</th>
+                     <th>{{ x.Result }}</th>
+                 </tr>
+                 {% endif %}
+
+             {% endfor %}
+         </table>
+
+     </body>
+</html>
+<table align="center">
+    <form action="{% url 'hr_home_page' %}" method="post">
+        {%  csrf_token %}
+        <tr>
+            <th>
+                        <button type="submit">Back</button>
+
+            </th>
+        </tr>
+    </form>
+</table>
+

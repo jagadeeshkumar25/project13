@@ -1,0 +1,21 @@
+<form action="{% url 'submitform' %}" method="post" enctype="multipart/form-data" >
+{%  csrf_token %}
+<table align="center" border="0">
+    <tr><th><h1 style="text-align: center;color:red;">APPLICATION FORM</h1> </th></tr>
+    <tr>
+        <th>
+            {{ aff.as_p }}
+        </th>
+    </tr>
+   <tr><th><button type="submit" value="apply" name="a1">Apply</button> </th></tr>
+    <tr><th><button type="submit"><h2 style="color: green"><a href="{% url 'applicant_login_page' %}"> LOGOUT</a></h2> </button> </th></tr>
+    <tr><th>
+        {% for x in messages %}
+            <h3 style="text-align: center;color: blue">{{ x }}</h3>
+        {% endfor %}
+    </th></tr>
+</table>
+</form>
+<h1 style="text-align: center">
+             <a href="{% url 'applicant_login_page' %}">Back</a>
+        </h1>

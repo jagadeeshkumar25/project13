@@ -1,0 +1,32 @@
+<table align="center" border="0" >
+    <form action="#" method="post">
+        {% csrf_token %}
+    <br>
+    <br>
+            <th>
+                {% for x in messages %}:
+                    {{ x }}
+                {% endfor %}
+            </th>
+        </tr>
+
+    <tr><th><h3 style="color: red;text-align: center">ADD EMPLOYEE PAGE</h3></th></tr>
+        <tr>
+            <th>
+                 {{ ae.as_p }}
+            </th>
+        </tr>
+    <br>
+    <br>
+        <tr>
+            <th>
+                <button type="submit" value="add_details" name="a1">SUBMIT</button>
+            </th>
+        </tr>
+    <tr>
+            <th>
+                <a href="{% url 'admin_home_page' %}">Back</a>
+            </th>
+        </tr>
+    </form>
+</table>

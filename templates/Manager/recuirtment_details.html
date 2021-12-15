@@ -1,0 +1,30 @@
+<h1 style="text-align: center">Adding New Recuirtment Details</h1>
+<table align="center" border="0">
+                            <form action="{% url 'adding_details' %}" method="post">
+                                {% csrf_token %}
+                                <tr>
+                                   <th>
+                                     {% for x in messages %}
+                                         <h2 style=" background: red">{{ x }}</h2>
+                                     {% endfor %}
+                                   </th>
+                                </tr>
+                                   <tr style="text-align: center">
+                                       <th>
+                                         {{ af.as_p }}
+                                       </th>
+                                   </tr>
+                                         <tr>
+                                              <th>
+                                                 <button type="submit" value="add" name="a2">ADD</button>
+                                              </th>
+                                         </tr>
+                            </form>
+                </table>
+
+            </tr>
+        </table>
+  <h1 style="text-align: center">
+             <a href="{% url 'recuirtment_page' %}">Back</a>
+        </h1>
+
